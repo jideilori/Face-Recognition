@@ -47,7 +47,6 @@ def index():
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             threshold = request.form['threshold_value']
             name=face_recognition(os.path.join(UPLOAD_FOLDER, filename),threshold)
-           
             data={
                 "uploaded_img":'static/uploads/'+filename,
                 "name":name

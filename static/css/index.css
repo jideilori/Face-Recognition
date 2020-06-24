@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.up_container{
+    border: 2px solid blue;
+    float: left;
+    margin:5px;
+    position:relative;
+    height:300px;
+    width:400px;
+}
+.details{
+    border:2px solid blue;
+    margin:5px;
+    position:relative;
+    overflow:hidden;
+    height:300px;
+    width:400px;
+}
+.up_container>img{
+    width:100%;
+    height:100%
+}
+.details>img{
+    width:150px;
+    height:150px;
+    border:1px solid #c2c2c2;
+}
+
+.info{
+    background-color:white;
+    position:absolute;
+    top:0;
+    left:160px;
+}

@@ -3,9 +3,9 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>MobileNet SSD Detector</title>
-   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+   <title>Face Recognition Web application</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 
 </head>
@@ -21,34 +21,34 @@
    {% endif %}
    {% endwith %}
    <nav class="navbar navbar-dark bg-dark ">
-      <a class="navbar-brand navbar-center" href="#">Face Recognition</a>
+      <a class="navbar-brand navbar-center" href="#">Face Recognition Demo</a>
    </nav>
 
   
 
    <div class="container">
+      
       <form method=post enctype=multipart/form-data>
          <input type=file name=file onchange="loadFile(event)">
-         <input type=submit value=Upload class="btn btn-primary">
          <input type="text" name=threshold_value value=0.5>
-
+         <input type=submit value=Find class="btn btn-primary">
       </form>
-      <img id="output" alt="" width="40%" height="40%" />
+      <img  alt=""  id="output" width="40%" height="40%" />
 
    </div>
 
    {% if data %}
-   <div class="container">
-      <img src="{{ data.uploaded_img }}" alt="" width="480px" height="360px">   
+   <div class="up_container">
+      <img src="{{ data.uploaded_img }}"  alt="" width="100%" height="100%">   
    </div>
    <div class="details">
       {% for data in data.name%}
       <img src="/static/images/players/{{ data }}.jpg" alt="" width="150px" height="150px">   
 
-      <p>{{ data }}</p>
+      <p class="info">{{ data }}</p>
       {% endfor %}
-
    </div>
+
    {% endif %}
 
 
