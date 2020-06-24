@@ -30,13 +30,10 @@
       <form method=post enctype=multipart/form-data>
          <input type=file name=file onchange="loadFile(event)">
          <input type=submit value=Upload class="btn btn-primary">
-         <input type="text" name=threshold_value>
-         <!-- <input type="range" min="0.01" max="0.99" value="" name=threshold_value id="myRange"> -->
-
+         <input type="text" name=threshold_value value=0.5>
 
       </form>
       <img id="output" alt="" width="40%" height="40%" />
-      <p>Value: <span id="demo"></span></p>
 
    </div>
 
@@ -45,7 +42,11 @@
       <img src="{{ data.uploaded_img }}" alt="" width="480px" height="360px">   
    </div>
    <div class="details">
-      <p>{{ data.name }}</p>
+      {% for data in data.name%}
+      <img src="/static/images/players/{{ data }}.jpg" alt="" width="150px" height="150px">   
+
+      <p>{{ data }}</p>
+      {% endfor %}
 
    </div>
    {% endif %}

@@ -9,7 +9,7 @@ import time
 
 predictor_path = 'res/shape_predictor_68_face_landmarks.dat'
 face_rec_model_path = 'res/dlib_face_recognition_resnet_model_v1.dat'
-data=pd.read_csv("myfacedata/fifadb.csv")
+data=pd.read_csv("facedata/fifadb.csv")
 detector = dlib.get_frontal_face_detector()
 sp = dlib.shape_predictor(predictor_path)
 facerec = dlib.face_recognition_model_v1(face_rec_model_path)
@@ -46,9 +46,8 @@ def index():
             filename = secure_filename(file.filename)
             file.save(os.path.join(UPLOAD_FOLDER, filename))
             threshold = request.form['threshold_value']
-            if threshold == '':
-                threshold=0.5
             name=face_recognition(os.path.join(UPLOAD_FOLDER, filename),threshold)
+           
             data={
                 "uploaded_img":'static/uploads/'+filename,
                 "name":name
