@@ -8,3 +8,8 @@ add
 
 to **res/** folder
 
+## Todo
+1. Enhance Gui
+2. Add enroll
+3. Realtime face recognition
+4. spoofing detection
